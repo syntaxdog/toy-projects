@@ -17,7 +17,7 @@ st.caption("🚀 LangChain & FastAPI 기반 (현재는 데모 모드입니다)")
 # 4. 채팅 기록을 저장할 공간 (세션 스테이트)
 # (새로고침 해도 대화 내용이 안 날아가게 해줍니다)
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "안녕하세요! 무엇을 도와드릴까요? 통신/네트워크 관련 질문도 좋습니다."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "안녕하세요! 무엇을 도와드릴까요? 아무거나 질문하세요!."}]
 
 # 5. 이전 대화 내용을 화면에 다시 그려주기
 for msg in st.session_state.messages:
@@ -45,4 +45,5 @@ if prompt := st.chat_input("질문을 입력하세요..."):
             st.write(response)
 
     # 대화 기록에 저장
+
     st.session_state.messages.append({"role": "assistant", "content": response})
